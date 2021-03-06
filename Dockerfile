@@ -7,5 +7,6 @@ ADD . /songmaker
 RUN cd /songmaker \
     && cabal update \
     && cabal install \
-    && cp /songmaker/dist/build/songmaker/songmaker /bin/
+    && cp /songmaker/dist/build/songmaker/songmaker /bin/ \
+    && rm -r /songmaker
 
