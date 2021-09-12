@@ -37,8 +37,8 @@ writeHeader s = liftLatex $ "\\beginsong{"++songTitle s++"}["++other++"]"
                   map (\i -> ("index", const $ Just i)) (songLineIndexes s)
         makeAuthor s = concatMaybes (\x y -> x ++ ", " ++ y)
                        [ makeAuthorTM s
-                       , ("D: " ++) <$> songAuthorTranslation s
-                       , ("Orig.: " ++) <$> songOrigTitle s]
+                       , ("dt.: " ++) <$> songAuthorTranslation s
+                       , ("orig.: " ++) <$> songOrigTitle s]
 
         makeAuthorTM s = case (songAuthorLyrics s, songAuthorMusic s) of
                           (Just a, Nothing) -> Just $ "T: " ++ a
